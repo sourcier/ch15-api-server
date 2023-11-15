@@ -2,6 +2,7 @@ const express = require("express");
 
 module.exports = function (app) {
   app.use(express.static("public"));
+  app.use(express.json());
 
   const cars = [{ name: "Tesla" }, { name: "Ford" }];
 
@@ -12,6 +13,6 @@ module.exports = function (app) {
   app.post("/api/v1/cars", (req, res) => {
     const newCar = req.body;
     cars.push(newCar);
-    req.sendStatus(201);
+    res.sendStatus(201);
   });
 };
