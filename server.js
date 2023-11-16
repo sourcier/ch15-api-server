@@ -2,7 +2,7 @@ const express = require("express");
 
 const app = express();
 
-require("./middleware")(app);
+require("./middlewares")(app);
 require("./db");
 require("./routes")(app);
 
